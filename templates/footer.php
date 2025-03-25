@@ -1,5 +1,5 @@
 <footer>
-    <p>Rodapé</p>
+    <p>Pizzaria &copy; 2025 - Todos os direitos reservados</p>
 </footer>
 
 <!--Bootstrap JS-->
