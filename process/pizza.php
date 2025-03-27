@@ -33,8 +33,43 @@
             $_SESSION['status'] = "warning";
 
         }else {
-            echo "Pedido enviado com sucesso";
-            exit;
+
+            // Salvando borda e massa na pizza            
+            $stmt = $conn->prepare('INSERT INTO pizzas (borda_id, massa_id) VALUES (:borda, :massa)');
+
+            // Filtrando inputs
+            $stmt->bindParam(':borda', $borda, PDO::PARAM_INT);
+            $stmt->bindParam(':massa', $massa, PDO::PARAM_INT);
+            $stmt->execute();
+
+            // Resgata o ID do pedido
+            $pizzaId = $conn->lastInsertId();
+
+            $stmt = $conn->prepare("INSERT INTO pizza_sabor(pizza_id, sabor_id) VALUES (:pizza, :sabor)"); 
+
+            // Insere os sabores no banco de dados
+            foreach ($sabores as $sabor) {
+                // Filtrando inputs
+                $stmt->bindParam(':pizza', $pizzaId, PDO::PARAM_INT);
+                $stmt->bindParam(':sabor', $sabor, PDO::PARAM_INT);
+                $stmt->execute();
+                
+            }
+
+            // Criar o pedido da pizza            
+            $stmt = $conn->prepare('INSERT INTO pedidos (pizza_id, status_id) VALUES (:pizza, :status)');
+
+            // Status sempre inicia com 1 (Em produção)
+            $status_id = 1;
+
+            // Filtrando inputs
+            $stmt->bindParam(':pizza', $pizzaId);
+            $stmt->bindParam(':status', $status_id);
+            $stmt->execute();
+
+            // Exibir mensagem de sucesso
+            $_SESSION['msg'] = "Pedido realizado com sucesso!";
+            $_SESSION['status'] = "success";
         }
 
         // Retorna para a página inicial
