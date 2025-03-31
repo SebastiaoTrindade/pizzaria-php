@@ -55,7 +55,13 @@ Este é um projeto simples de uma pizzaria desenvolvido em **PHP** com **MySQL**
    ```
 
 ## 📷 Capturas de Tela
-*(Adicione capturas de tela do sistema aqui)*
+
+### 🏠 Página Inicial (Index)
+![Página Inicial](https://github.com/SebastiaoTrindade/pizzaria-php/blob/master/index.php)
+
+### 📊 Dashboard
+![Dashboard](https://github.com/SebastiaoTrindade/pizzaria-php/blob/master/dashboard.php)
+
 
 ## 📝 Licença
 Este projeto está sob a licença MIT. Sinta-se livre para usá-lo e modificá-lo!
