@@ -57,10 +57,10 @@ Este é um projeto simples de uma pizzaria desenvolvido em **PHP** com **MySQL**
 ## 📷 Capturas de Tela
 
 ### 🏠 Página Inicial (Index)
-![Página Inicial](https://github.com/SebastiaoTrindade/pizzaria-php/blob/master/index.png)
+![Página Inicial](https://github.com/SebastiaoTrindade/pizzaria-php/blob/master/Index.png)
 
 ### 📊 Dashboard
-![Dashboard](https://github.com/SebastiaoTrindade/pizzaria-php/blob/master/dashboard.png)
+![Dashboard](https://github.com/SebastiaoTrindade/pizzaria-php/blob/master/Dashboard.png)
 
 
 ## 📝 Licença
